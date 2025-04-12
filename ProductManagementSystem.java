@@ -5,7 +5,7 @@ import java.util.List;
 
 abstract class Product {
     private String name;
-    private String description;
+    public String description;
     public double price;
 
     public Product(String name, String description, double price) {
@@ -58,13 +58,13 @@ class ClothingProduct extends Product {
     private String material;
 
     public ClothingProduct(String name, String description, double price, String size, String material) {
-        super(name, description, price);
+        super(name,description,price);
         this.size = size;
         this.material = material;
     }
 
     public String getDescription() {
-        return super.getBasicInfo() + ", Size: " + size + ", Material: " + material;
+        return super.getBasicInfo() +",Brand: "+ description + ", Size: " + size + ", Material: " + material;
     }
 
     public double getPrice() {
@@ -138,13 +138,13 @@ class ShoppingCart {
 public class ProductManagementSystem {
 	public static void main(String[] args) {
         ElectronicsProduct laptop = new ElectronicsProduct(
-            "Laptop", "High-performance laptop", 65000, "Dell", "2 years");
+            "Laptop", "High-performance laptop", 65000, "Lenovo", "2 years");
         
         ClothingProduct tshirt = new ClothingProduct(
-            "T-Shirt", "Cotton t-shirt", 499, "M", "Cotton");
+            "Top", "Avaasa", 499, "S", "Cotton");
         
         BookProduct javaBook = new BookProduct(
-            "Java Programming", "Learn Java programming", 350, "John Doe", "123-4567890123");
+            "Java Programming", "Learn Java programming", 350, "John Doe", "123-456");
 
         ShoppingCart cart = new ShoppingCart();
 
